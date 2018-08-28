@@ -1,0 +1,1 @@
+rewrite ^(.*)$ /index.php?url=$1 last; NGINX
