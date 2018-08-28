@@ -11,7 +11,6 @@ class Home extends Controller
 
         $user->username = $name;
         $user->save();
-
     }
 
     public function create($username = '', $email = '')
