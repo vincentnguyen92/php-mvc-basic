@@ -6,6 +6,10 @@
     "autoload": {
         "classmap": [
             "app/models"
-        ]
+        ],
+        "psr-4": {
+            "Vincent\\App\\": "app/",
+            "Vincent\\Core\\": "core/"
+        }
     }
 }

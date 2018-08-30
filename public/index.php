@@ -1,8 +1,8 @@
 <?php
 //Error reporting
 error_reporting(E_ALL);
+define('ROOT_DIR', __DIR__ . '/..//');
+require ROOT_DIR . '/vendor/autoload.php';
 
-
-require_once '../app/init.php';
-
-$app = new App();
+$app = new \Vincent\Core\Init();
+$app->run();

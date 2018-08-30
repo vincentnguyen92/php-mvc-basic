@@ -1,26 +1,20 @@
 <?php
+namespace Vincent\App\Controllers;
+
+use Vincent\Core\Controller;
+use Vincent\App\Models\User;
 
 class Home extends Controller
 {
     public function index($name = '')
     {
-        var_dump(urldecode($name));die();
-       $this->view('home/index', array('name' => $name));
+    	$user = User::first();
 
-        $user = User::find(1);
-
-        $user->username = $name;
-        $user->save();
+        $this->view('home/index', array('user' => $user));
     }
 
-    public function create($username = '', $email = '')
+    public function test($name = '')
     {
-        $user = User::create([
-            'username' => $username,
-            'email' => $email
-        ]);
-
-        var_dump($user->id);
+    	echo "Hello TEST" . $name;
     }
-
 }

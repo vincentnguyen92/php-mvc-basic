@@ -1,13 +1,8 @@
 <?php
-
-/**
- * Created by PhpStorm.
- * User: mhamm
- * Date: 15/11/2016
- * Time: 11:26
- */
+namespace Vincent\App\Models;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
+
 
 class User extends Eloquent
 {
