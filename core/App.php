@@ -35,11 +35,11 @@ class App
      **/
     private function loadController()
     {
-        if (file_exists('../app/controllers/' . $this->url[0] . '.php')) {
+        if (file_exists('../app/controllers/' . $this->url[0] . 'Controller.php')) {
             $this->controller = $this->url[0];
             unset($this->url[0]);
         }
-        $path = '\Vincent\App\Controllers' . '\\' . $this->controller;
+        $path = '\Vincent\App\Controllers' . '\\' . $this->controller . 'Controller';
 
         $this->controller = new $path;
     }

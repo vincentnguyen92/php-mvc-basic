@@ -4,7 +4,7 @@ namespace Vincent\App\Controllers;
 use Vincent\Core\Controller;
 use Vincent\App\Models\User;
 
-class Home extends Controller
+class HomeController extends Controller
 {
     public function index($name = '')
     {

@@ -13,13 +13,6 @@ class Controller
      **/
     public function view($view, $data = array())
     {
-        // if ($data) {
-        //     foreach ($data as &$d) {
-        //         $d = urldecode($d);
-        //     }
-        // }
-        // echo "<pre>";
-        // var_dump($data);die();
         require_once '../app/views/' . $view . '.php';
     }
 }
