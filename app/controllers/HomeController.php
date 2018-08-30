@@ -1,5 +1,5 @@
 <?php
-namespace Vincent\App\Controllers; //phpcs:ignore
+namespace Vincent\App\Controllers;
 
 use Vincent\Core\Controller;
 use Vincent\App\Models\User;

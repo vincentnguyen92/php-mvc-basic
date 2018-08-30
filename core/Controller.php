@@ -1,5 +1,5 @@
 <?php
-namespace Vincent\Core; //phpcs:ignore
+namespace Vincent\Core;
 
 /**
  * The Controller Basic -  application running MVC Basic

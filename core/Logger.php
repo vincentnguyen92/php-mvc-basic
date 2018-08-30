@@ -1,5 +1,5 @@
 <?php
-namespace Vincent\Core; // phpcs:ignore
+namespace Vincent\Core;
 
 /**
  * Enable debug when running
