@@ -10,7 +10,7 @@ class Database
 		$capsule = new Capsule();
 
 		$capsule->addConnection(
-		    include(ROOT_DIR . 'app/config/database.php')
+		    include(ROOT_DIR . 'config/database.php')
 		);
 
 		$capsule->bootEloquent();
