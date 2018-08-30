@@ -3,6 +3,15 @@ namespace Vincent\Core;
 
 use Vincent\Core\Database;
 
+/**
+ * The Main application running MVC Basic
+ * 
+ * @category Application
+ * @package  Vincent\Core
+ * @author   Vincent Nguyen <mr.vannguyen92@gmail.com>
+ * @license  MIT license
+ * @link     https://github.com/vincentnguyen92/php-mvc-basic/
+ **/
 class App
 {
     protected $url = array();
@@ -10,12 +19,22 @@ class App
     protected $method = 'index';
     protected $params = array();
 
+     /**
+      * Init the application
+      *
+      * @return void
+      **/
     public function __construct()
     {
+        
         (new Database);
+
         $this->parseUrl();
+
         $this->loadController();
+
         $this->loadMethod();
+
         $this->loadParams();
 
         // Run...
@@ -28,12 +47,12 @@ class App
         );
     }
 
-    /**
-     *
-     *
-     *
-     **/
-    private function loadController()
+     /**
+      * Get the controller from URL Array
+      *
+      * @return Vincent\App\Controller
+      **/
+    protected function loadController()
     {
         if (file_exists('../app/controllers/' . $this->url[0] . 'Controller.php')) {
             $this->controller = $this->url[0];
@@ -44,12 +63,12 @@ class App
         $this->controller = new $path;
     }
 
-    /**
-     *
-     *
-     *
-     **/
-    private function loadMethod()
+     /**
+      * Get the method from URL Array
+      *
+      * @return void
+      **/
+    protected function loadMethod()
     {
         if (isset($this->url[1])) {
             if (method_exists($this->controller, $this->url[1])) {
@@ -59,22 +78,24 @@ class App
         }
     }
 
-    /**
-     *
-     *
-     *
-     **/
-    private function loadParams()
+     /**
+      * Get the params from URL Array
+      *
+      * @return void
+      **/
+    protected function loadParams()
     {
         $this->params = $this->url ? array_values($this->url) : array();
     }
 
-    /**
-     *
-     *
-     *
-     **/
-    private function decodeURLArray($data)
+     /**
+      * Decode back to original
+      *
+      * @param array $data The params from request after detected
+      *
+      * @return void
+      **/
+    protected function decodeURLArray($data = array())
     {
         if ($data) {
             foreach ($data as &$d) {
@@ -85,11 +106,11 @@ class App
     }
 
      /**
-     *
-     *
-     *
-     **/
-    private function parseUrl()
+      * Encode and convert url string to array
+      *
+      * @return void
+      **/
+    protected function parseUrl()
     {
         if (isset($_GET['url'])) {
             $url = str_replace("%2F", "/", urlencode($_GET['url']));
