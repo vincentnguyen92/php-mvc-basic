@@ -1,5 +1,5 @@
 <?php
-namespace Vincent\Core;
+namespace Vincent\Core; // phpcs:ignore
 
 use Vincent\Core\Database;
 
