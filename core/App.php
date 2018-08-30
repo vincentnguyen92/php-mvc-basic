@@ -114,7 +114,10 @@ class App
     {
         if (isset($_GET['url'])) {
             $url = str_replace("%2F", "/", urlencode($_GET['url']));
-            $this->url = explode('/', filter_var(trim($url, '/'), FILTER_SANITIZE_URL));
+            $this->url = explode(
+                '/', 
+                filter_var(trim($url, '/'), FILTER_SANITIZE_URL)
+            );
         }
     }
 }
