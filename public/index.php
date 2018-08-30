@@ -1,4 +1,5 @@
 <?php
+//phpcs:ignore
 //Error reporting
 error_reporting(E_ALL);
 define('ROOT_DIR', __DIR__ . '/..//');
