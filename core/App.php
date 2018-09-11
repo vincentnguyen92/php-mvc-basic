@@ -2,6 +2,7 @@
 namespace Vincent\Core;
 
 use Vincent\Core\Database;
+use Vincent\Core\LoadConstant;
 
 /**
  * The Main application running MVC Basic
@@ -26,8 +27,9 @@ class App
       **/
     public function __construct()
     {
-        
         (new Database);
+
+        $this->loadConstant();
 
         $this->parseUrl();
 
@@ -45,6 +47,16 @@ class App
             ), 
             $this->decodeURLArray($this->params) // return params to original
         );
+    }
+
+     /**
+      * Load constants
+      * 
+      * @return void
+      */
+    protected function loadConstant()
+    {
+        LoadConstant::load();
     }
 
      /**

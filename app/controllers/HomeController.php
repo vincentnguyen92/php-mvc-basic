@@ -24,6 +24,7 @@ class HomeController extends Controller
       **/
     public function index($name = '')
     {
+        // constants('HELLO_WORLD'); // get constant from helper constants
         $user = User::first();
 
         $this->view('home/index', array('user' => $user));
