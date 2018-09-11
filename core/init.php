@@ -6,9 +6,9 @@ use Vincent\Core\Logger;
 
 class Init
 {
-	public function run()
-	{
-		(new Logger);
-		(new App);
-	}
+    public function run()
+    {
+        (new Logger);
+        (new App);
+    }
 }
