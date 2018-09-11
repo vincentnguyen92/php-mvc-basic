@@ -7,6 +7,7 @@
         "classmap": [
             "app/models"
         ],
+        "files": "helpers.php",
         "psr-4": {
             "Vincent\\App\\": "app/",
             "Vincent\\Core\\": "core/"
